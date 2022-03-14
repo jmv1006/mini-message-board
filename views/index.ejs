@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="main">
+      <div class="pageTitle"><%= title %></div>
+      <form method="GET" action="/new">
+        <button id="addNoteButton">Add a note</button>
+      </form>
+      <div id="messageDisplayContainer">
+        <% for(let i = 0; i < messages.length; i++) { %>
+          <div class="message">
+            <div class="userName"><%= messages[i].user %></div>
+            <div class="messageText"><%= messages[i].text %></div>
+            <div>Submitted On: <%= messages[i].added %></div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    
+  </body>
+</html>
